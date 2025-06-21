@@ -1,0 +1,7 @@
+.LeavePage{
+  display: flex;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}

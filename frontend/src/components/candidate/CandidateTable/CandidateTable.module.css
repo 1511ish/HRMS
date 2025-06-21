@@ -1,0 +1,521 @@
+/* src/components/EmployeeTable/EmployeeTable.module.css */
+
+.container {
+  /* padding: 24px; */
+  width: 100%;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.table th, .table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.table th {
+  background: #4D007D;
+  font-weight: 600;
+  color: #fff;
+}
+
+.actionCell {
+  position: relative;
+}
+
+.dots {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots img {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  z-index: 10;
+  min-width: 100px;
+  overflow: hidden;
+}
+
+.dropdown div {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.dropdown div:hover {
+  background-color: #f3f4f6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dashboard.module.css */
+
+:global(*) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:global(body) {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  background-color: #f8f9fa;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e9ecef;
+  padding: 20px 0;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 30px 20px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  background-color: #6366f1;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.searchContainer {
+  padding: 0 20px 20px 20px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px 8px 35px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f8f9fa;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 32px;
+  top: 11px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.navSection {
+  margin-bottom: 30px;
+}
+
+.navSectionTitle {
+  padding: 0 20px 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #495057;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  background-color: #f8f9fa;
+  color: #6366f1;
+}
+
+.active {
+  background-color: #6366f1;
+  color: white;
+  border-right: 3px solid #4f46e5;
+}
+
+.navIcon {
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+/* Main Content Styles */
+.mainContent {
+  flex: 1;
+  margin-left: 250px;
+  padding: 30px;
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notificationIcon {
+  position: relative;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.notificationIcon:hover {
+  background-color: #e9ecef;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #dc3545;
+  border-radius: 50%;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Table Container */
+.tableContainer {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tableTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tableSearch {
+  position: relative;
+}
+
+.tableSearchInput {
+  padding: 8px 12px 8px 35px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 250px;
+}
+
+.tableSearchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.addCandidateBtn {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addCandidateBtn:hover {
+  background-color: #4f46e5;
+}
+
+.filters {
+  padding: 15px 25px;
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+  display: flex;
+  gap: 15px;
+}
+
+.filterDropdown {
+  padding: 8px 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+/* Table Styles */
+.candidatesTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  background-color: #6366f1;
+  color: white;
+}
+
+.tableHead th {
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tableBody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.tableBody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.tableBody tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.tableBody td {
+  padding: 15px 20px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.candidateName {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Status Dropdown Styles */
+.statusDropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.statusDropdown {
+  padding: 6px 25px 6px 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: white;
+  appearance: none;
+  min-width: 100px;
+}
+
+.statusNew {
+  color: #1976d2;
+  border-radius: 20px;
+}
+
+.statusSelected {
+  color: #2e7d32;
+  border-color: #4D007D;
+  border-radius: 20px;
+}
+
+.statusRejected {
+  color: #d32f2f;
+  border-color: #4D007D;
+  border-radius: 20px;
+}
+
+.dropdownArrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6c757d;
+  font-size: 50px;
+}
+
+/* Action Menu Styles */
+.actionMenuContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.actionMenuBtn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #6c757d;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.actionMenuBtn:hover {
+  background-color: #f8f9fa;
+}
+
+.actionMenu {
+  position: absolute;
+  top: 0%;
+  right: 90%;
+  background-color: white;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 160px;
+  /* padding: 8px 0; */
+}
+
+.actionMenuItem {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.actionMenuItem:hover {
+  background-color: #f8f9fa;
+}
+
+.delete {
+  color: #d32f2f;
+}
+
+.delete:hover {
+  background-color: #ffebee;
+}
+
+
+.dots {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots img {
+  width: 20px;
+  height: 20px;
+}

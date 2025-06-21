@@ -1,0 +1,9 @@
+  .container {
+    flex: 1;
+    padding: 24px 12px;
+    background-color: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  

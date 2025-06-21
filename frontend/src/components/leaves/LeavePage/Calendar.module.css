@@ -1,0 +1,19 @@
+.leaveCalendarCard {
+    /* width: 350px; */
+    flex:1;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .calendarHeader {
+    background-color:#4D007D;;
+    color: white;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }

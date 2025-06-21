@@ -1,0 +1,43 @@
+.dropdownContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    padding: 8px 32px 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: white;
+    appearance: none;
+    min-width: 100px;
+}
+
+.dropdownArrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #6c757d;
+    font-size: 50px;
+}
+
+
+.statusNew {
+    color: #1976d2;
+    border-radius: 20px;
+}
+
+.statusSelected {
+    color: #2e7d32;
+    border-color: #4D007D;
+    border-radius: 20px;
+}
+
+.statusRejected {
+    color: #d32f2f;
+    border-color: #4D007D;
+    border-radius: 20px;
+}
