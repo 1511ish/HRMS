@@ -27,7 +27,7 @@ const FilterSection = ({
               </option>
             ))}
           </select>
-          
+
           // <Dropdown
           //   onChange={(e) => onStatusChange(e.target.value)}
           //   value={"Status"}
@@ -55,12 +55,16 @@ const FilterSection = ({
         justifyContent: 'space-between',
       }}>
         {showSearchBar && (
-          <div className={styles.searchBox}>
-            <input type="text" placeholder="Search" />
-            <img src="/icons/search.png" alt="Search" />
+          <div className={styles.searchBar}>
+            <input
+              type="text"
+              placeholder="Search"
+              className={styles.searchInput}
+            />
+            <img src="/icons/search.png" alt="Search" className={styles.searchIcon} />
           </div>
         )}
-        
+
 
         {showAddButton && (
           <button onClick={onButtonClick} className={styles.button}>

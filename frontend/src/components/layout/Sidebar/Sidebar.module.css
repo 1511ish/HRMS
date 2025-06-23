@@ -1,4 +1,3 @@
-/* Sidebar.module.css */
 
 .sidebar {
   width: 240px;
@@ -9,8 +8,7 @@
   flex-direction: column;
   gap: 10px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-  padding-top: 40px;
-  /* Only top spacing for upper section */
+  padding-top: 30px;
   box-sizing: border-box;
 }
 
@@ -19,7 +17,6 @@
   flex-direction: column;
   gap: 30px;
   padding: 0 20px;
-  /* padding only for upper section */
 }
 
 .lowerSection {
@@ -27,7 +24,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* no padding here, so it aligns edge to edge as in Figma */
 }
 
 .sectionTitle {
@@ -36,8 +32,6 @@
   color: #9ca3af;
   text-transform: uppercase;
   padding: 10px 20px;
-  /* margin: 0 0 8px 20px; */
-  /* manual indent so titles align with menu items */
 }
 
 .menuItem {
@@ -45,7 +39,6 @@
   align-items: center;
   gap: 12px;
   padding: 10px 20px;
-  /* Align with section title left */
   font-size: 14px;
   border-radius: 8px;
   cursor: pointer;
@@ -59,14 +52,13 @@
 }
 
 .active {
-  /* border-left: 4px solid #6c2bd9; */
-  color: #6c2bd9;
+  color: #4B0082;
   font-weight: 600;
   background-color: #f9f5ff;
 }
 
 .activeBar {
-  border: 4px solid #6c2bd9;
+  border: 3px solid #4B0082;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   height: 100%;
@@ -80,10 +72,27 @@
 }
 
 
-.searchBox {
-  padding: 10px 16px;
-  border-radius: 20px;
+.searchBar {
+  display: flex;
+  align-items: center;
   border: 1px solid #ccc;
-  font-size: 14px;
+  border-radius: 20px;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  opacity: 0.6;
+}
+
+.searchInput {
+  border: none;
   outline: none;
+  background: transparent;
+  font-size: 14px;
+  flex: 1;
 }

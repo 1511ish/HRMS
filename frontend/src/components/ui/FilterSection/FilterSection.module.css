@@ -24,7 +24,7 @@
   /* appearance: none; */
 }
 
-.searchBox {
+/* .searchBox {
   position: relative;
   display: flex;
   align-items: center;
@@ -42,6 +42,28 @@
   right: 10px;
   width: 16px;
   height: 16px;
+} */
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  flex: 1;
 }
 
 .button {

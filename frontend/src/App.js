@@ -7,13 +7,15 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div className="App">
-      {!isLoggedIn ? (
-        <RegistrationPage onLoginSuccess={() => setIsLoggedIn(true)} />
-      ) : (
-        <Dashboard onLogout={() => setIsLoggedIn(false)} />
-      )}
-    </div>
+    // <div className="App">
+    //   {!isLoggedIn ? (
+    //     <RegistrationPage onLoginSuccess={() => setIsLoggedIn(true)} />
+    //   ) : (
+    //     <Dashboard onLogout={() => setIsLoggedIn(false)} />
+    //   )}
+    // </div>
+
+    <><Dashboard/></>
   );
 }
 

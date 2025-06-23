@@ -25,8 +25,15 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
         <>
             <div className={styles.sidebar}>
                 <div className={styles.upperSection}>
-                    <Logo boxSize={32} />
-                    <input type="text" placeholder="Search" className={styles.searchBox} />
+                    <Logo boxSize={32} square={4}/>
+                    <div className={styles.searchBar}>
+                        <img src="/icons/search.png" alt="Search" className={styles.searchIcon} />
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className={styles.searchInput}
+                        />
+                    </div>
                 </div>
 
                 <div className={styles.lowerSection}>
