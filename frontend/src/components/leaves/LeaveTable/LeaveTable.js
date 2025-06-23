@@ -62,7 +62,7 @@ const LeaveTable = ({ leaves, onStatusChange }) => {
     //   </table>
     // </div>
 
-    <div style={{ width: '70%', margin: '0 auto' }}>
+    <div style={{ width: '65%', margin: '0 auto' }}>
       <Table>
         <thead>
           <tr>

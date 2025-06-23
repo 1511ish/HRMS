@@ -1,7 +1,6 @@
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from './auth.module.css';
 
 export default function RegisterForm({ setIsLogin }) {
   const [formData, setFormData] = useState({
@@ -26,13 +25,21 @@ export default function RegisterForm({ setIsLogin }) {
       formData.fullName.trim() !== '' &&
       formData.email.trim() !== '' &&
       formData.password.trim() !== '' &&
-      formData.confirmPassword.trim() !== '' &&
-      formData.password === formData.confirmPassword
+      formData.confirmPassword.trim() !== ''
     );
   };
 
   const handleRegister = async () => {
-    if (!isFormValid()) return;
+    if (!isFormValid()) {
+      setError("Please fill all fields.");
+      return;
+    }
+  
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+  
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_BASE_URL}/api/admin/register`, formData);
@@ -45,85 +52,85 @@ export default function RegisterForm({ setIsLogin }) {
 
   return (
     <>
-      <div style={styles.inputGroup}>
-        <label style={styles.label}>Full name*</label>
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Full name<span className={styles.required}>*</span></label>
         <input
           type="text"
           name="fullName"
           value={formData.fullName}
           onChange={handleInputChange}
-          style={styles.input}
+          className={styles.input}
           placeholder="Full Name"
         />
       </div>
 
-      <div style={styles.inputGroup}>
-        <label style={styles.label}>Email Address*</label>
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Email Address<span className={styles.required}>*</span></label>
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleInputChange}
-          style={styles.input}
+          className={styles.input}
           placeholder="Email Address"
         />
       </div>
 
-      <div style={styles.inputGroup}>
-        <label style={styles.label}>Password*</label>
-        <div style={styles.passwordContainer}>
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Password<span className={styles.required}>*</span></label>
+        <div className={styles.passwordContainer}>
           <input
             type={showPassword ? "text" : "password"}
             name="password"
             value={formData.password}
             onChange={handleInputChange}
-            style={styles.passwordInput}
+            className={styles.passwordInput}
             placeholder="Password"
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            style={styles.eyeButton}
+            className={styles.eyeButton}
           >
             <img
               src={showPassword ? "/icons/eye-open.png" : "/icons/eye-hidden.png"}
               alt={showPassword ? "Hide password" : "Show password"}
-              style={styles.eyeIcon}
+              className={styles.eyeIcon}
             />
           </button>
         </div>
       </div>
 
-      <div style={styles.inputGroup}>
-        <label style={styles.label}>Confirm Password*</label>
-        <div style={styles.passwordContainer}>
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Confirm Password<span className={styles.required}>*</span></label>
+        <div className={styles.passwordContainer}>
           <input
             type={showConfirmPassword ? "text" : "password"}
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleInputChange}
-            style={styles.passwordInput}
+            className={styles.passwordInput}
             placeholder="Confirm Password"
           />
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            style={styles.eyeButton}
+            className={styles.eyeButton}
           >
             <img
               src={showConfirmPassword ? "/icons/eye-open.png" : "/icons/eye-hidden.png"}
               alt={showConfirmPassword ? "Hide password" : "Show password"}
-              style={styles.eyeIcon}
+              className={styles.eyeIcon}
             />
           </button>
         </div>
       </div>
 
-      {error && <p style={{ color: 'red', margin: '6px 0' }}>{error}</p>}
+      {error && <div className={styles.errorBox}>{error}</div>}
 
       <button
+        className={styles.submitButton}
         style={{
-          ...styles.submitButton,
           backgroundColor: isFormValid() ? '#6B46C1' : '#ccc',
           cursor: isFormValid() ? 'pointer' : 'not-allowed'
         }}
@@ -132,64 +139,7 @@ export default function RegisterForm({ setIsLogin }) {
       >
         Register
       </button>
+
     </>
   );
 }
-
-
-const styles = {
-  inputGroup: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '4px'
-
-  },
-  label: {
-    fontSize: '14px',
-    color: '#555',
-    fontWeight: '500'
-  },
-  input: {
-    padding: '10px 14px',
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    outline: 'none',
-    backgroundColor: '#f9f9f9'
-  },
-  passwordContainer: {
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center'
-  },
-  passwordInput: {
-    padding: '10px 14px',
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    fontSize: '14px',
-    outline: 'none',
-    width: '100%',
-    backgroundColor: '#f9f9f9'
-  },
-  eyeButton: {
-    position: 'absolute',
-    right: '12px',
-    background: 'none',
-    border: 'none',
-    cursor: 'pointer',
-    padding: '4px'
-  },
-  eyeIcon: {
-    width: '16px',
-    height: '16px',
-    objectFit: 'contain'
-  },
-  submitButton: {
-    marginTop: '10px',
-    padding: '14px',
-    borderRadius: '8px',
-    border: 'none',
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#fff'
-  }
-};

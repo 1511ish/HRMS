@@ -22,7 +22,7 @@ import ModalPortal from "../../ui/ModalPortal/ModalPortal";
 //   };
 
 //   useEffect(() => {
-    
+
 //   }, [filters]);
 
 
@@ -142,7 +142,7 @@ const EmployeesSection = () => {
   };
 
   return (
-    <div>
+    <>
       <FilterSection
         showPosition={true}
         showStatus={false}
@@ -167,7 +167,7 @@ const EmployeesSection = () => {
         handleEdit={handleEdit}
         handleDelete={handleDelete}
       />
-    </div>
+    </>
   );
 };
 

@@ -60,6 +60,7 @@ const FilterSection = ({
             <img src="/icons/search.png" alt="Search" />
           </div>
         )}
+        
 
         {showAddButton && (
           <button onClick={onButtonClick} className={styles.button}>

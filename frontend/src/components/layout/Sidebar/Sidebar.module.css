@@ -1,84 +1,89 @@
-/* src/components/Sidebar/Sidebar.module.css */
+/* Sidebar.module.css */
 
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #ffffff;
-    border-right: 1px solid #e5e7eb;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .logo {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #6c2bd9;
-  }
-  
-  .searchBox {
-    padding: 8px 12px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    outline: none;
-    font-size: 14px;
-  }
-  
-  .sectionTitle {
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #9ca3af;
-    text-transform: uppercase;
-  }
-  
-  .menuItem {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    /* transition: background-color 0.2s; */
-    color: #374151;
-    position: relative;
-  }
-  
-  .menuItem:hover {
-    background-color: #f3f4f6;
-  }
-  
+  width: 240px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  padding-top: 40px;
+  /* Only top spacing for upper section */
+  box-sizing: border-box;
+}
 
-  .active {
-    position: relative;
-    border-left: 4px solid #6c2bd9; /* Purple bar */
-    background-color: transparent;  /* No filled background */
-    color: #6c2bd9;
-    font-weight: 600;
-    left:0;
-    border-radius: 0;
-  }
-  
-  
-  .icon {
-    width: 16px;
-    height: 16px;
-  }
+.upperSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 20px;
+  /* padding only for upper section */
+}
 
-  .activeBar {
-    /* position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0; */
-    width: 6px;
-    height: 100%;
-    background-color: #6c2bd9;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
-  
+.lowerSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* no padding here, so it aligns edge to edge as in Figma */
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  /* margin: 0 0 8px 20px; */
+  /* manual indent so titles align with menu items */
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  /* Align with section title left */
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #374151;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.menuItem:hover {
+  background-color: #f3f4f6;
+}
+
+.active {
+  /* border-left: 4px solid #6c2bd9; */
+  color: #6c2bd9;
+  font-weight: 600;
+  background-color: #f9f5ff;
+}
+
+.activeBar {
+  border: 4px solid #6c2bd9;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+
+.searchBox {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}

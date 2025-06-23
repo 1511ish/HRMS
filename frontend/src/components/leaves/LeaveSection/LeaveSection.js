@@ -33,8 +33,8 @@ const LeaveSection = () => {
     }, [filters]);
 
     useEffect(() => {
-       console.log("leaves: ", leaves);
-    },[leaves])
+        console.log("leaves: ", leaves);
+    }, [leaves])
 
     const applyLeave = async (leaveData) => {
         try {
@@ -52,7 +52,7 @@ const LeaveSection = () => {
     const updateLeaveStatus = async (id, status) => {
         try {
             const updated = await axios.put(`${process.env.REACT_APP_BACKEND_BASE_URL}/api/leaves/${id}/status`, { status: status })
-            console.log("updated leave: ",updated.data);
+            console.log("updated leave: ", updated.data);
             setLeaves((prev) =>
                 prev.map((l) => (l._id === id ? { ...l, status: updated.data.status } : l))
             );
@@ -62,7 +62,7 @@ const LeaveSection = () => {
     };
 
     return (
-        <div >
+        <>
             <FilterSection
                 showPosition={false}
                 showStatus={true}
@@ -75,7 +75,7 @@ const LeaveSection = () => {
                 statusOptions={["Pending", "Approved", "Rejected"]}
                 onButtonClick={() => setShowModal(true)}
             />
-            <LeavePage leaves={leaves} onStatusChange={updateLeaveStatus}/>
+            <LeavePage leaves={leaves} onStatusChange={updateLeaveStatus} />
 
             {showModal && (
                 <AddLeaveModal
@@ -83,7 +83,7 @@ const LeaveSection = () => {
                     onSave={applyLeave}
                 />
             )}
-        </div>
+        </>
     );
 };
 

@@ -1,9 +1,16 @@
-  .container {
+.container {
     flex: 1;
     padding: 24px 12px;
     background-color: #fff;
     min-height: 100vh;
     box-sizing: border-box;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  
+.mainContent{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -53,22 +53,9 @@ const AttendanceTable = ({ employees, handleStatusChange }) => {
                 <div className={styles.dots} onClick={() => toggleActionMenu(employee.id)}>
                   <img src="/icons/more.png" alt="options" />
                 </div>
-                {openActionMenu === employee._id && (
-                  <div className={styles.actionMenu}>
-                    <button
-                      className={styles.actionMenuItem}
-                      onClick={() => handleActionClick("Download Resume", employee._id)}
-                    >
-                      Download Resume
-                    </button>
-                    <button
-                      className={`${styles.actionMenuItem} ${styles.delete}`}
-                      onClick={() => handleActionClick("Delete Candidate", employee._id)}
-                    >
-                      Delete Candidate
-                    </button>
-                  </div>
-                )}
+                {/* {openActionMenu === employee._id && (
+                      // we can add some action here 
+                )} */}
               </div>
             </td>
           </tr>

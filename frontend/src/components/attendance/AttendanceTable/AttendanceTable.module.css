@@ -52,3 +52,10 @@
   object-fit: cover;
   margin-right: 0.8rem;
 }
+
+
+
+.actionMenuBtn:hover {
+  background-color: #f8f9fa;
+}
+

@@ -62,11 +62,12 @@ const CandidateSection = () => {
   };
 
   return (
-    <div>
+    <>
       <FilterSection
         showStatus={true}
         showPosition={true}
         showAddButton={true}
+        showSearchBar={true}
         addButtonLabel="Add Candidate"
         onButtonClick={() => setShowModal(true)}
         onStatusChange={(status) => setFilters((prev) => ({ ...prev, status }))}
@@ -90,7 +91,7 @@ const CandidateSection = () => {
         onStatusChange={updateCandidateStatus}
         deleteCandidate={deleteCandidate}
       />
-    </div>
+    </>
   );
 };
 

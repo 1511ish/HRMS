@@ -1,52 +1,56 @@
+.filterSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  /* padding: 10px 0; */
+}
 
-   .filterSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    padding: 10px 0;
-  }
-  
-  .dropdown {
-    padding: 6px 14px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 14px;
-    background: white;
-    outline: none;
-    cursor: pointer;
-    /* appearance: none; */
-  }
-  
-  .searchBox {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .searchBox input {
-    padding: 6px 32px 6px 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-  }
-  
-  .searchBox img {
-    position: absolute;
-    right: 10px;
-    width: 16px;
-    height: 16px;
-  }
-  
-  .button {
-    background-color: #4b0076;
-    color: white;
-    border: none;
-    font-size:14px;
-    padding: 8px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 500;
-  }
-  
+.filterSection div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dropdown {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  background: white;
+  outline: none;
+  cursor: pointer;
+  /* appearance: none; */
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchBox input {
+  padding: 6px 32px 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.searchBox img {
+  position: absolute;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+.button {
+  background-color: #4b0076;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+}

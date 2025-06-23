@@ -28,7 +28,7 @@ const AttendanceSection = () => {
       }
     }
   };
-  
+
   useEffect(() => {
     fetchEmployees();
   }, [filters]);
@@ -43,7 +43,7 @@ const AttendanceSection = () => {
   }
 
   return (
-    <div >
+    <>
       <FilterSection
         showPosition={false}
         showStatus={true}
@@ -53,7 +53,7 @@ const AttendanceSection = () => {
         statusOptions={["Present", "Absent", "Medical Leave", "Work From Home"]}
       />
       <AttendanceTable employees={employees} handleStatusChange={handleStatusChange} />
-    </div>
+    </>
   );
 };
 
